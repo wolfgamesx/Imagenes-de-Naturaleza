@@ -10,7 +10,6 @@
 </head>
 <body>
     <!-- Botón Flotante de WhatsApp -->
-    <!-- Cambia el número "584120000000" por tu número real con código de país -->
     <a href="https://wa.me/+584166700336" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M11.42 21.81L6.08 22.98L7.25 17.64C5.9 16.2 5.08 14.3 5.08 12.2C5.08 7.6 8.78 3.9 13.38 3.9C17.98 3.9 21.68 7.6 21.68 12.2C21.68 16.8 17.98 20.5 13.38 20.5C12.03 20.5 10.76 20.15 9.68 19.56L11.42 21.81ZM13.38 5.4C9.62 5.4 6.58 8.44 6.58 12.2C6.58 13.62 7.01 14.93 7.74 16.03L7.02 19.3L10.37 18.57C11.3 19.12 12.33 19.4 13.38 19.4C17.14 19.4 20.18 16.36 20.18 12.2C20.18 8.04 17.14 5.4 13.38 5.4ZM17.14 15.65C16.98 16.1 16.36 16.48 15.82 16.58C15.42 16.66 14.86 16.7 12.83 15.86C10.23 14.78 8.52 12.14 8.38 11.96C8.25 11.78 7.34 10.56 7.34 9.3C7.34 8.04 7.98 7.42 8.23 7.16C8.44 6.95 8.78 6.84 9.1 6.84C9.2 6.84 9.3 6.84 9.38 6.86C9.64 6.88 9.77 6.9 9.94 7.3C10.15 7.82 10.66 9.08 10.72 9.2C10.78 9.32 10.84 9.48 10.76 9.64C10.68 9.8 10.6 9.9 10.48 10.04C10.36 10.18 10.23 10.34 10.12 10.44C10 10.56 9.86 10.7 10.02 10.98C10.18 11.26 10.66 12.04 11.38 12.68C12.3 13.5 13.06 13.76 13.36 13.88C13.62 14 13.92 13.96 14.1 13.76C14.34 13.5 14.64 13.04 14.94 12.6C15.18 12.22 15.46 12.26 15.76 12.38C16.08 12.5 17.64 13.26 17.94 13.42C18.24 13.58 18.44 13.66 18.52 13.8C18.6 13.94 18.6 14.74 18.2 15.48"/>
@@ -24,7 +23,7 @@
         </nav>
     </header>
 
-    <!-- Sección Hero con Parallax y animaciones de entrada -->
+    <!-- Sección Hero -->
     <section class="hero">
         <div class="hero-content">
             <h2 class="fade-in-up">La Naturaleza en su Máxima Expresión</h2>
@@ -32,45 +31,109 @@
         </div>
     </section>
 
-    <!-- Galería con Grid y efectos Hover -->
-    <!-- SECCIÓN DE GALERÍA (Reemplaza desde la línea 36 hasta la 67) -->
+    <!-- Galería con Grid (Ahora cada ítem es un enlace directo al visor) -->
     <section class="gallery-section">
         <div class="gallery-grid">
             
-            <div class="gallery-item">
+            <a href="#foto1" class="gallery-item">
                 <img src="1.jpg" alt="El ocaso">
-                <div class="overlay">
-                    <h4>El ocaso</h4>
-                </div>
-            </div>
+                <div class="overlay"><h4>El ocaso</h4></div>
+            </a>
 
-            <div class="gallery-item">
+            <a href="#foto2" class="gallery-item">
                 <img src="2.jpg" alt="Montañas y lago">
-                <div class="overlay">
-                    <h4>Noche Radiante</h4>
-                </div>
-            </div>
+                <div class="overlay"><h4>Noche Radiante</h4></div>
+            </a>
 
-            <div class="gallery-item">
+            <a href="#foto3" class="gallery-item">
                 <img src="3.jpg" alt="Cascada en el bosque">
-                <div class="overlay">
-                    <h4>Mediodía</h4>
-                </div>
-            </div>
+                <div class="overlay"><h4>Mediodía</h4></div>
+            </a>
 
-            <div class="gallery-item">
+            <a href="#foto4" class="gallery-item">
                 <img src="4.jpg" alt="Atardecer en la montaña">
-                <div class="overlay">
-                    <h4>Arbol Flamboyán</h4>
-                </div>
-            </div>
+                <div class="overlay"><h4>Arbol Flamboyán</h4></div>
+            </a>
 
-            <div class="gallery-item">
+            <a href="#foto5" class="gallery-item">
                 <img src="5.jpg" alt="Hojas y moras silvestres">
-                <div class="overlay">
-                    <h4>Moras</h4>
-                </div>
-            </div>
+                <div class="overlay"><h4>Moras</h4></div>
+            </a>
 
         </div>
-    </section> 
+    </section>
+
+    <!-- VISORES INDEPENDIENTES (PURA ESTRATEGIA CSS) -->
+    
+    <!-- Visor 1 -->
+    <div id="foto1" class="lightbox">
+        <a href="#" class="close-area"></a> <!-- Permite cerrar haciendo click fuera -->
+        <div class="lightbox-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="1.jpg" alt="El ocaso">
+            <div class="lightbox-info">
+                <h3>El ocaso</h3>
+                <p>Cámara Réflex • ISO 100 • f/5.6 • Atardecer silvestre</p>
+                <a href="https://wa.me/+584166700336?text=Hola%20Wolfgamesx,%20me%20interesa%20la%20fotograf%C3%ADa%20%22El%20ocaso%22" target="_blank" class="lightbox-btn-wa">Consultar obra</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor 2 -->
+    <div id="foto2" class="lightbox">
+        <a href="#" class="close-area"></a>
+        <div class="lightbox-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="2.jpg" alt="Montañas y lago">
+            <div class="lightbox-info">
+                <h3>Noche Radiante</h3>
+                <p>Captura Nocturna • Exposición Prolongada • ISO 400</p>
+                <a href="https://wa.me/+584166700336?text=Hola%20Wolfgamesx,%20me%20interesa%20la%20fotograf%C3%ADa%20%22Noche%20Radiante%22" target="_blank" class="lightbox-btn-wa">Consultar obra</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor 3 -->
+    <div id="foto3" class="lightbox">
+        <a href="#" class="close-area"></a>
+        <div class="lightbox-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="3.jpg" alt="Cascada en el bosque">
+            <div class="lightbox-info">
+                <h3>Mediodía</h3>
+                <p>Cámara Réflex • Enfoque Infinito • f/8.0 • Iluminación Natural</p>
+                <a href="https://wa.me/+584166700336?text=Hola%20Wolfgamesx,%20me%20interesa%20la%20fotograf%C3%ADa%20%22Mediod%C3%ADa%22" target="_blank" class="lightbox-btn-wa">Consultar obra</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor 4 -->
+    <div id="foto4" class="lightbox">
+        <a href="#" class="close-area"></a>
+        <div class="lightbox-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="4.jpg" alt="Arbol Flamboyán">
+            <div class="lightbox-info">
+                <h3>Arbol Flamboyán</h3>
+                <p>Lente de 50mm • ISO 200 • f/4.0 • Contraste de Color</p>
+                <a href="https://wa.me/+584166700336?text=Hola%20Wolfgamesx,%20me%20interesa%20la%20fotograf%C3%ADa%20%22Arbol%20Flamboy%C3%A1n%22" target="_blank" class="lightbox-btn-wa">Consultar obra</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor 5 -->
+    <div id="foto5" class="lightbox">
+        <a href="#" class="close-area"></a>
+        <div class="lightbox-content">
+            <a href="#" class="close-btn">&times;</a>
+            <img src="5.jpg" alt="Moras">
+            <div class="lightbox-info">
+                <h3>Moras</h3>
+                <p>Macrofotografía • Enfoque Selectivo • f/2.8 • Detalles Botánicos</p>
+                <a href="https://wa.me/+584166700336?text=Hola%20Wolfgamesx,%20me%20interesa%20la%20fotograf%C3%ADa%20%22Moras%22" target="_blank" class="lightbox-btn-wa">Consultar obra</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
