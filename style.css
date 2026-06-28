@@ -327,25 +327,37 @@ a.gallery-item {
     color: #d4af37;
 }
 
-/* Diseño adaptado para pantallas de computadoras */
+/* Busca este bloque al final de tu style.css y reemplázalo */
 @media (min-width: 768px) {
     .lightbox-content {
         flex-direction: row;
-        max-width: 800px;
+        
+        /* CAMBIA ESTO: De 800px súbelo a 1100px o 1200px */
+        max-width: 1100px; 
+        width: 90%; /* Le da un margen elegante a los lados en pantallas medianas */
     }
+    
     .lightbox-content img {
-        width: 50%;
+        width: 50%; /* La mitad exacta para la foto vertical */
     }
+    
     .lightbox-info {
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 40px;
+        
+        /* Le damos más aire al texto para que mantenga el look de galería premium */
+        padding: 50px; 
     }
-    .close-btn {
-        top: 20px;
-        right: 25px;
-        color: #ffffff;
+    
+    /* Hacemos los textos un poquito más imponentes en monitores grandes */
+    .lightbox-info h3 {
+        font-size: 2.4rem; 
+    }
+    
+    .lightbox-info p {
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
 }
