@@ -360,4 +360,39 @@ a.gallery-item {
         font-size: 1rem;
         margin-bottom: 30px;
     }
+}/* ================= ETIQUETA DE PRECIO PREMIUM ================= */
+.lightbox-price {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* Línea divisoria muy elegante */
+    padding-top: 15px;
+}
+
+/* La etiqueta pequeña de arriba */
+.price-label {
+    font-size: 0.7rem;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras tipo marca de lujo */
+    color: #8a959c;
+    margin-bottom: 4px;
+}
+
+/* El número del precio */
+.price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37; /* Tu dorado corporativo */
+    font-weight: 700;
+}
+
+/* Ajuste de tamaño para pantallas de PC */
+@media (min-width: 768px) {
+    .lightbox-price {
+        margin-bottom: 35px;
+        padding-top: 20px;
+    }
+    .price-amount {
+        font-size: 2.2rem; /* Más imponente en monitores */
+    }
 }
