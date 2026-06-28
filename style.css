@@ -1,0 +1,210 @@
+/* Variables de color y tema */
+:root {
+    --primary: #2C4230;
+    --accent: #D4AF37; /* Dorado sutil para dar elegancia */
+    --text-light: #F5F5F5;
+    --bg-dark: #0a0e0b; /* Verde extremadamente oscuro */
+    --whatsapp: #25D366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Tipografía Serif para darle un toque de galería de arte */
+}
+
+/* ================= HEADER (Efecto Glassmorphism) ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5vw;
+    background: rgba(10, 14, 11, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* ================= HERO SECTION (Parallax) ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Efecto Parallax puro con CSS */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=2070');
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+/* ================= GALERÍA DE IMÁGENES ================= */
+.gallery-section {
+    padding: 80px 5vw;
+    background: linear-gradient(to bottom, var(--bg-dark), #141c16);
+}
+
+.gallery-grid {
+    display: grid;
+    /* Grid responsivo automático */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4; /* Formato vertical tipo retrato */
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transición suave para el hover */
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.5s ease;
+    filter: brightness(0.7) contrast(1.1);
+}
+
+/* Efecto al pasar el ratón por la imagen */
+.gallery-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.1);
+}
+
+/* Cortina oscura con el título de la foto */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+.overlay h4 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+.gallery-item:hover .overlay h4 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ================= BOTÓN WHATSAPP ANIMADO ================= */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--whatsapp);
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 1000;
+    animation: pulse-ws 2s infinite; /* Llama a la animación keyframe */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1) rotate(-5deg);
+    animation-play-state: paused;
+}
+
+/* ================= ANIMACIONES KEYFRAMES ================= */
+/* Entrada del texto principal (de abajo hacia arriba) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Retrasos para que los elementos entren uno tras otro */
+.delay-1 { animation-delay: 0.3s; }
+
+/* Pulso expansivo del botón de WhatsApp */
+@keyframes pulse-ws {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ================= DISEÑO RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2.8rem; }
+    .hero-content p { font-size: 1rem; }
+    header { padding: 15px 20px; }
+    .whatsapp-btn { 
+        bottom: 25px; 
+        right: 25px; 
+        width: 55px;
+        height: 55px;
+    }
+    .whatsapp-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
